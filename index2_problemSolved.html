@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пенсія</title>
+</head>
+<body>
+    <div>
+    <p>Введіть кількість років страхового стажу:</p>
+    <input type="number" id="experience" required>
+    <input type="button" id="calc" value="Розрахувати">
+    </div>
+    <hr>
+    <div id="res"></div>
+
+    <script>
+        /*Намагалася зробити сторінку, що відображає вимоги для виходу на пенсію за 2022 рік, 
+        весь час видавало меседж з останньої умови. 
+        Вивела значення змінної exp глобально - 0. 
+        Це тому, що записувалось значення, яке було при загрузці сторінки, а не при натисканні кнопки. 
+        Оголосила змінну локально - стало записувати значення, коли воно там було вписане - все спрацювало.*/
+        
+        let result = document.querySelector("#res");//пошук по дереву
+        let calculate = document.getElementById('calc');
+    
+        calculate.onclick = function(){//івент для кнопки, оголошення змінної і перевірка
+            let exp = document.getElementById('experience').value;//не просто знаходимо вузол, а видобуваємо введене значення
+
+            if ( exp > 29 ) {
+                result.innerHTML = 'Ви зможете вийти на пенсію у 60 років';}
+            
+            else if ( 19 < exp && exp > 29 ) {
+                result.innerHTML = 'Ви зможете піти на пенсію у 63 роки';}
+
+            else if ( 15 < exp && exp > 19 ) {
+                result.innerHTML = 'Ви зможете піти на пенсію у 65 років';}
+            
+            else if( 15 > exp ) {
+                result.innerHTML = `${exp} Ви поки не можете вийти на пенсію`;
+            }
+        }
+    </script>
+</body>
+</html>
