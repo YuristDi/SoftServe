@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навпаки</title>
+</head>
+<body>
+    <script>
+        let x = prompt('Введіть трицифрове число', 100)
+        let a = x % 10;
+        let x1 = Math.trunc(x / 10);
+        let b = x1 % 10;
+        let x2 = Math.trunc(x1/ 10);
+        let c = x2 % 10;
+
+        console.log(`${a} ${b} ${c}`);
+    </script>
+</body>
+</html>

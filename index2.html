@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = prompt('Введіть Ваш вік:', 1);
+        let pension = 65 - age;//якщо брати вік виходу на пенсію 65 років, а не рахувати стаж за новими правилами
+        
+        let date = new Date();
+        let currentYear = date.getFullYear();
+        let year = currentYear + pension;
+
+
+        console.log(`Ви зможете піти на пенсію у ${year}, через ${pension} р.`);
+    </script>
+</body>
+</html>
